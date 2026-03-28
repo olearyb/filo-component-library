@@ -12,11 +12,13 @@
       "color": {
         "default": {
           "$type": "color",
-          "$value": "{color.gray.50}"
+          "$value": "{color.gray.50}",
+          "$description": "The default background color of the page, typically applied to the html or body element."
         },
         "hover": {
           "$type": "color",
-          "$value": "{color.gray.100}"
+          "$value": "{color.gray.100}",
+          "$description": "The background color of hover states that use background-base-color"
         }
       }
     },
@@ -24,11 +26,13 @@
       "color": {
         "default": {
           "$type": "color",
-          "$value": "#FFFFFF"
+          "$value": "#FFFFFF",
+          "$description": "The background color of any surface elements in the UI. Typically applied to Containers, Sections, Cards, Menu's, Modals, Forms or any other container/component that contains UI elements and other components."
         },
         "hover": {
           "$type": "color",
-          "$value": "{color.gray.50}"
+          "$value": "{color.gray.50}",
+          "$description": "Background color for the hover state of background-surface-color"
         }
       }
     },
@@ -36,11 +40,13 @@
       "color": {
         "default": {
           "$type": "color",
-          "$value": "{color.gray.50}"
+          "$value": "{color.gray.50}",
+          "$description": "The secondary surface color, typically applied to the backgrounds of content cards, sections, and similar components. Secondary surface color should be used when a distinction is needed between its background and that of background-surface-color. For example, alternating row backgrounds in a data table"
         },
         "hover": {
           "$type": "color",
-          "$value": "{color.gray.100}"
+          "$value": "{color.gray.100}",
+          "$description": "Background color for the hover state of the background-surface-secondary-color"
         }
       }
     },
@@ -48,11 +54,13 @@
       "color": {
         "default": {
           "$type": "color",
-          "$value": "{color.gray.900}"
+          "$value": "{color.gray.900}",
+          "$description": "An inverted variant of the default surface color, dark in light mode and light in dark mode. It is used as the background color for components that require a stark contrast with the application background, such as tooltips."
         },
         "hover": {
           "$type": "color",
-          "$value": "{color.gray.800}"
+          "$value": "{color.gray.800}",
+          "$description": "Background color for the hover state of the background-iniverse-color"
         }
       }
     },
@@ -60,11 +68,13 @@
       "color": {
         "default": {
           "$type": "color",
-          "$value": "{color.gray.100}"
+          "$value": "{color.gray.100}",
+          "$description": "The tertiary surface color, typically used when a distinction is needed between its background and that of both background-surface-color and background-surface-secondary-color."
         },
         "hover": {
           "$type": "color",
-          "$value": "{color.gray.200}"
+          "$value": "{color.gray.200}",
+          "$description": "Background color for the hover state of the background-surface-tertiary-color"
         }
       }
     }
@@ -73,29 +83,35 @@
     "background-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.gray.900}"
+        "$value": "{color.gray.900}",
+        "$description": "The background color of elements used to reinforce the brand, typically primary calls to action such as primary buttons, checkboxes, radios, links etc. \n\n"
       },
       "hover": {
         "$type": "color",
-        "$value": "{color.gray.700}"
+        "$value": "{color.gray.700}",
+        "$description": "Background hover color for primary accent elements."
       },
       "active": {
         "$type": "color",
-        "$value": "{color.gray.600}"
+        "$value": "{color.gray.600}",
+        "$description": "Background active color for primary accent elements."
       }
     },
     "border-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.gray.900}"
+        "$value": "{color.gray.900}",
+        "$description": "The border color of elements used to reinforce the brand, typically primary calls to action such as primary buttons, checkboxes, radios etc. "
       },
       "hover": {
         "$type": "color",
-        "$value": "{color.gray.700}"
+        "$value": "{color.gray.700}",
+        "$description": "Border hover color for primary accent elements."
       },
       "active": {
         "$type": "color",
-        "$value": "{color.gray.600}"
+        "$value": "{color.gray.600}",
+        "$description": "Border active color for primary accent elements."
       }
     }
   },
@@ -103,19 +119,22 @@
     "background-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.red.50}"
+        "$value": "{color.red.50}",
+        "$description": "Background color for communicating critical information, such as error messages and alerts.\n"
       }
     },
     "border-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.red.200}"
+        "$value": "{color.red.200}",
+        "$description": "Border color for communicating critical information, such as error messages and alerts."
       }
     },
     "text-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.red.800}"
+        "$value": "{color.red.800}",
+        "$description": "Text color for communicating critical information, such as error messages and alerts."
       }
     }
   },
@@ -123,19 +142,22 @@
     "background-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.green.100}"
+        "$value": "{color.green.100}",
+        "$description": "Background color for communicating positive information outcomes, such as success messages and alerts."
       }
     },
     "border-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.green.200}"
+        "$value": "{color.green.200}",
+        "$description": "Border color for communicating positive information outcomes, such as success messages and alerts."
       }
     },
     "text-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.green.800}"
+        "$value": "{color.green.800}",
+        "$description": "Text color for communicating positive information outcomes, such as success messages and alerts."
       }
     }
   },
@@ -143,19 +165,22 @@
     "background-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.amber.100}"
+        "$value": "{color.amber.100}",
+        "$description": "Background color for communicating caution, such as in warning messages and alerts."
       }
     },
     "border-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.amber.200}"
+        "$value": "{color.amber.200}",
+        "$description": "Border color for communicating caution, such as in warning messages and alerts."
       }
     },
     "text-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.amber.800}"
+        "$value": "{color.amber.800}",
+        "$description": "Text color for communicating caution, such as in warning messages and alerts."
       }
     }
   },
@@ -163,85 +188,102 @@
     "background-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.blue.100}"
+        "$value": "{color.blue.100}",
+        "$description": "Background color for communicating informative messages that dont have a negative, cautionary or successful semantic meaning. "
       }
     },
     "border-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.blue.200}"
+        "$value": "{color.blue.200}",
+        "$description": "Border color for communicating informative messages that dont have a negative, cautionary or successful semantic meaning. "
       }
     },
     "text-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.blue.800}"
+        "$value": "{color.blue.800}",
+        "$description": "Text color for communicating informative messages that dont have a negative, cautionary or successful semantic meaning. "
       }
     }
   },
   "border": {
     "default": {
       "$type": "color",
-      "$value": "{color.gray.300}"
+      "$value": "{color.gray.300}",
+      "$description": "The default border color for neutral elements, such as text inputs, container borders, horizontal separators etc. "
     },
     "hover": {
       "$type": "color",
-      "$value": "{color.gray.400}"
+      "$value": "{color.gray.400}",
+      "$description": "Border hover color for border default colors"
     },
     "active": {
       "$type": "color",
-      "$value": "{color.gray.400}"
+      "$value": "{color.gray.400}",
+      "$description": "Border active color for border default colors"
     }
   },
   "text-color": {
     "primary": {
       "$type": "color",
-      "$value": "{color.gray.900}"
+      "$value": "{color.gray.900}",
+      "$description": "The primary text color that used throughout the application. This is typically applied to body text and any text that is used on a neutral background color. "
     },
     "inverse": {
       "$type": "color",
-      "$value": "{color.gray.50}"
+      "$value": "{color.gray.50}",
+      "$description": "Text color that is used when text is placed on top of the background-inverse-color token. "
     },
     "on-accent": {
       "$type": "color",
-      "$value": "#FFFFFF"
+      "$value": "#FFFFFF",
+      "$description": "Text color that is used when placed on top of the primary accent color in order to meet accessibility contrast requirements of 4.5:1."
     },
     "secondary": {
       "$type": "color",
-      "$value": "{color.gray.700}"
+      "$value": "{color.gray.700}",
+      "$description": "The secondary text color that used throughout the application. This is typically applied to text that requires less visual emphasis than primary text. "
     },
     "disabled": {
       "$type": "color",
-      "$value": "{color.gray.400}"
+      "$value": "{color.gray.400}",
+      "$description": "Text color for any text in a disabled state and thus exempt from user interaction. "
     }
   },
   "destructive": {
     "background-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.red.700}"
+        "$value": "{color.red.700}",
+        "$description": "Background color for UI elements related to destructive actions."
       },
       "hover": {
         "$type": "color",
-        "$value": "{color.red.600}"
+        "$value": "{color.red.600}",
+        "$description": "Background hover color for UI elements related to destructive actions."
       },
       "active": {
         "$type": "color",
-        "$value": "{color.red.800}"
+        "$value": "{color.red.800}",
+        "$description": "Background active color for UI elements related to destructive actions."
       }
     },
     "border-color": {
       "default": {
         "$type": "color",
-        "$value": "{color.red.700}"
+        "$value": "{color.red.700}",
+        "$description": "Border color for UI elements related to destructive actions."
       },
       "hover": {
         "$type": "color",
-        "$value": "{color.red.600}"
+        "$value": "{color.red.600}",
+        "$description": "Border hover color for UI elements related to destructive actions."
       },
       "active": {
         "$type": "color",
-        "$value": "{color.red.800}"
+        "$value": "{color.red.800}",
+        "$description": "Border active color for UI elements related to destructive actions."
       }
     }
   }
