@@ -1,0 +1,32 @@
+{
+  "name": "my-component-library",
+  "version": "0.1.0",
+  "description": "Web component library built with ElenaJS and Tokens Studio design tokens",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./tokens": "./dist/tokens/tokens.css",
+    "./components/*": "./dist/components/*.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tokens": "node scripts/build-tokens.mjs",
+    "build:components": "npx elena build",
+    "build": "npm run build:tokens && npm run build:components",
+    "watch": "npx elena watch",
+    "dev": "npm run build:tokens && npm run watch"
+  },
+  "devDependencies": {
+    "@elenajs/bundler": "latest",
+    "@elenajs/core": "latest",
+    "@tokens-studio/sd-transforms": "latest",
+    "style-dictionary": "^4.0.0"
+  },
+  "peerDependencies": {
+    "@elenajs/core": "latest"
+  }
+}

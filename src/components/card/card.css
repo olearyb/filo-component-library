@@ -1,0 +1,103 @@
+/**
+ * Card styles — Composite Component.
+ * Uses named ::slotted() selectors to style projected children.
+ *
+ * Note: ::slotted() only works inside Shadow DOM. Since Elena uses Light DOM
+ * by default, we use attribute-based selectors on the card itself and rely
+ * on consumers naming their slots via slot="..." attributes.
+ *
+ * For Light DOM slot styling, target the actual slot attributes directly.
+ */
+
+@scope (my-card) {
+  /* ── Base card ──────────────────────────────────────────────────── */
+  :scope {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mcl-color-semantic-surface);
+    border-radius: var(--mcl-border-radius-lg);
+    overflow: hidden;
+    transition: box-shadow 200ms ease;
+  }
+
+  /* ── Variants ───────────────────────────────────────────────────── */
+  :scope[variant="default"] {
+    border: 1px solid var(--mcl-color-semantic-border);
+    box-shadow: var(--mcl-shadow-sm);
+  }
+
+  :scope[variant="elevated"] {
+    border: none;
+    box-shadow: var(--mcl-shadow-lg);
+  }
+  :scope[variant="elevated"]:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  :scope[variant="outlined"] {
+    border: 2px solid var(--mcl-color-semantic-border);
+    box-shadow: none;
+  }
+
+  /* ── Padding on the content areas ──────────────────────────────── */
+  :scope [slot="title"],
+  :scope [slot="body"],
+  :scope [slot="actions"] {
+    padding-left: var(--mcl-spacing-4);
+    padding-right: var(--mcl-spacing-4);
+  }
+
+  :scope[padding="sm"] [slot="title"],
+  :scope[padding="sm"] [slot="body"],
+  :scope[padding="sm"] [slot="actions"] {
+    padding-left: var(--mcl-spacing-3);
+    padding-right: var(--mcl-spacing-3);
+  }
+
+  :scope[padding="lg"] [slot="title"],
+  :scope[padding="lg"] [slot="body"],
+  :scope[padding="lg"] [slot="actions"] {
+    padding-left: var(--mcl-spacing-6);
+    padding-right: var(--mcl-spacing-6);
+  }
+
+  /* ── Media region ───────────────────────────────────────────────── */
+  :scope [slot="media"] {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  /* ── Title ──────────────────────────────────────────────────────── */
+  :scope [slot="title"] {
+    padding-top: var(--mcl-spacing-4);
+    padding-bottom: var(--mcl-spacing-2);
+    font-size: var(--mcl-font-size-lg);
+    font-weight: var(--mcl-font-weight-semibold);
+    color: var(--mcl-color-semantic-text-default);
+    margin: 0;
+    line-height: var(--mcl-line-height-tight);
+  }
+
+  /* ── Body ───────────────────────────────────────────────────────── */
+  :scope [slot="body"] {
+    flex: 1;
+    padding-bottom: var(--mcl-spacing-4);
+    font-size: var(--mcl-font-size-sm);
+    color: var(--mcl-color-semantic-text-muted);
+    line-height: var(--mcl-line-height-normal);
+    margin: 0;
+  }
+
+  /* ── Actions ────────────────────────────────────────────────────── */
+  :scope [slot="actions"] {
+    display: flex;
+    gap: var(--mcl-spacing-2);
+    align-items: center;
+    padding-top: var(--mcl-spacing-3);
+    padding-bottom: var(--mcl-spacing-4);
+    border-top: 1px solid var(--mcl-color-semantic-border);
+    margin-top: auto;
+  }
+}

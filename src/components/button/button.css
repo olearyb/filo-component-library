@@ -1,0 +1,123 @@
+/**
+ * Button styles — all values reference CSS custom properties from tokens.css.
+ * Nothing is hardcoded here. Swap your tokens, everything updates.
+ *
+ * The @scope rule keeps these styles from leaking to the rest of the page.
+ */
+
+@scope (my-button) {
+  /* ── Base button reset & shared styles ─────────────────────────── */
+  :scope .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--mcl-spacing-2);
+
+    border: 1px solid transparent;
+    border-radius: var(--mcl-border-radius-md);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: var(--mcl-font-weight-medium);
+    line-height: var(--mcl-line-height-tight);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+    user-select: none;
+  }
+
+  /* ── Sizes ──────────────────────────────────────────────────────── */
+  :scope .btn--sm {
+    font-size: var(--mcl-font-size-xs);
+    padding: var(--mcl-spacing-1) var(--mcl-spacing-3);
+    border-radius: var(--mcl-border-radius-sm);
+  }
+
+  :scope .btn--md {
+    font-size: var(--mcl-font-size-sm);
+    padding: var(--mcl-spacing-2) var(--mcl-spacing-4);
+  }
+
+  :scope .btn--lg {
+    font-size: var(--mcl-font-size-base);
+    padding: var(--mcl-spacing-3) var(--mcl-spacing-6);
+    border-radius: var(--mcl-border-radius-lg);
+  }
+
+  /* ── Variants ───────────────────────────────────────────────────── */
+  :scope .btn--primary {
+    background-color: var(--mcl-color-semantic-primary);
+    color: var(--mcl-color-semantic-text-on-primary);
+    box-shadow: var(--mcl-shadow-sm);
+  }
+  :scope .btn--primary:hover:not(:disabled) {
+    background-color: var(--mcl-color-semantic-primary-hover);
+    box-shadow: var(--mcl-shadow-md);
+  }
+  :scope .btn--primary:active:not(:disabled) {
+    background-color: var(--mcl-color-semantic-primary-active);
+    box-shadow: none;
+  }
+
+  :scope .btn--secondary {
+    background-color: var(--mcl-color-semantic-surface);
+    color: var(--mcl-color-semantic-text-default);
+    border-color: var(--mcl-color-semantic-border);
+    box-shadow: var(--mcl-shadow-sm);
+  }
+  :scope .btn--secondary:hover:not(:disabled) {
+    background-color: var(--mcl-color-semantic-surface-subtle);
+    box-shadow: var(--mcl-shadow-md);
+  }
+
+  :scope .btn--ghost {
+    background-color: transparent;
+    color: var(--mcl-color-semantic-primary);
+    border-color: transparent;
+  }
+  :scope .btn--ghost:hover:not(:disabled) {
+    background-color: var(--mcl-color-semantic-primary-subtle);
+  }
+
+  :scope .btn--danger {
+    background-color: var(--mcl-color-semantic-danger);
+    color: var(--mcl-color-semantic-text-on-primary);
+    box-shadow: var(--mcl-shadow-sm);
+  }
+  :scope .btn--danger:hover:not(:disabled) {
+    background-color: var(--mcl-color-semantic-danger-hover);
+  }
+
+  /* ── States ─────────────────────────────────────────────────────── */
+  :scope .btn--disabled,
+  :scope .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  :scope .btn--loading {
+    cursor: wait;
+    opacity: 0.75;
+  }
+
+  /* ── Loading spinner ────────────────────────────────────────────── */
+  :scope .btn__spinner {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: mcl-spin 600ms linear infinite;
+  }
+
+  @keyframes mcl-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* ── Focus ring (accessibility) ─────────────────────────────────── */
+  :scope .btn:focus-visible {
+    outline: 2px solid var(--mcl-color-semantic-primary);
+    outline-offset: 2px;
+  }
+}

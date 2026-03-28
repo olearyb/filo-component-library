@@ -1,0 +1,44 @@
+/**
+ * Stack styles — attribute-driven flex layout using token-based spacing.
+ */
+
+@scope (my-stack) {
+  :scope {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--mcl-spacing-4);
+    flex-wrap: nowrap;
+  }
+
+  /* ── Direction ──────────────────────────────────────────────────── */
+  :scope[direction="row"]    { flex-direction: row; }
+  :scope[direction="column"] { flex-direction: column; }
+
+  /* ── Wrap ───────────────────────────────────────────────────────── */
+  :scope[wrap] { flex-wrap: wrap; }
+
+  /* ── Align ──────────────────────────────────────────────────────── */
+  :scope[align="start"]   { align-items: flex-start; }
+  :scope[align="center"]  { align-items: center; }
+  :scope[align="end"]     { align-items: flex-end; }
+  :scope[align="stretch"] { align-items: stretch; }
+
+  /* ── Justify ────────────────────────────────────────────────────── */
+  :scope[justify="start"]   { justify-content: flex-start; }
+  :scope[justify="center"]  { justify-content: center; }
+  :scope[justify="end"]     { justify-content: flex-end; }
+  :scope[justify="between"] { justify-content: space-between; }
+
+  /* ── Gap — map spacing token keys to CSS vars ───────────────────── */
+  :scope[gap="1"]  { gap: var(--mcl-spacing-1); }
+  :scope[gap="2"]  { gap: var(--mcl-spacing-2); }
+  :scope[gap="3"]  { gap: var(--mcl-spacing-3); }
+  :scope[gap="4"]  { gap: var(--mcl-spacing-4); }
+  :scope[gap="5"]  { gap: var(--mcl-spacing-5); }
+  :scope[gap="6"]  { gap: var(--mcl-spacing-6); }
+  :scope[gap="8"]  { gap: var(--mcl-spacing-8); }
+  :scope[gap="10"] { gap: var(--mcl-spacing-10); }
+  :scope[gap="12"] { gap: var(--mcl-spacing-12); }
+}
