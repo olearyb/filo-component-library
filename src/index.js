@@ -9,6 +9,6 @@
  *   import "my-component-library/components/button"
  */
 
-export { default as MyButton } from "./components/button/button.js";
-export { default as MyCard }   from "./components/card/card.js";
-export { default as MyStack }  from "./components/stack/stack.js";
+export { default as FiloButton } from "./components/button/button.js";
+export { default as FiloCard }   from "./components/card/card.js";
+export { default as FiloStack }  from "./components/stack/stack.js";

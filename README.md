@@ -61,7 +61,7 @@ npm run build:tokens
 ```
 
 This runs Style Dictionary and outputs `dist/tokens/tokens.css`.
-All CSS variable names are prefixed with `--mcl-` (change the prefix in `scripts/build-tokens.mjs`).
+All CSS variable names are prefixed with `--filo-` (change the prefix in `scripts/build-tokens.mjs`).
 
 ### 4. Build the component library
 
@@ -101,7 +101,7 @@ Figma (Tokens Studio plugin)
   → export JSON to tokens/tokens.json
   → npm run build:tokens
   → dist/tokens/tokens.css  (CSS custom properties)
-  → components reference var(--mcl-*) in their .css files
+  → components reference var(--filo-*) in their .css files
 ```
 
 Never hardcode values in component CSS. Always use a token variable.
@@ -144,12 +144,12 @@ MyBadge.define();
 @scope (my-badge) {
   :scope .badge {
     display: inline-flex;
-    padding: var(--mcl-spacing-1) var(--mcl-spacing-2);
-    border-radius: var(--mcl-border-radius-full);
-    font-size: var(--mcl-font-size-xs);
-    font-weight: var(--mcl-font-weight-medium);
-    background: var(--mcl-color-semantic-primary-subtle);
-    color: var(--mcl-color-semantic-primary);
+    padding: var(--filo-spacing-1) var(--filo-spacing-2);
+    border-radius: var(--filo-border-radius-full);
+    font-size: var(--filo-font-size-xs);
+    font-weight: var(--filo-font-weight-medium);
+    background: var(--filo-color-semantic-primary-subtle);
+    color: var(--filo-color-semantic-primary);
   }
 }
 ```

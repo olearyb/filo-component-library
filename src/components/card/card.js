@@ -1,23 +1,23 @@
 /**
- * <my-card> — Composite Component
+ * <filo-card> — Composite Component
  *
  * A layout wrapper that enhances whatever HTML is placed inside it.
  * No render() method — it never touches its children. The consumer
  * provides all the inner markup using named slots.
  *
  * Usage:
- *   <my-card>
+ *   <filo-card>
  *     <img slot="media" src="..." alt="..." />
  *     <h3 slot="title">Card Title</h3>
  *     <p slot="body">Some description text.</p>
- *     <my-button slot="actions">Learn more</my-button>
- *   </my-card>
+ *     <filo-button slot="actions">Learn more</filo-button>
+ *   </filo-card>
  *
  *   <!-- Elevated variant with no media -->
- *   <my-card variant="elevated" padding="lg">
+ *   <filo-card variant="elevated" padding="lg">
  *     <h3 slot="title">Statistics</h3>
  *     <p slot="body">All your numbers here.</p>
- *   </my-card>
+ *   </filo-card>
  *
  * Props:
  *   variant — "default" | "elevated" | "outlined"  (default: "default")
@@ -32,8 +32,8 @@
 
 import { Elena } from "@elenajs/core";
 
-export default class MyCard extends Elena(HTMLElement) {
-  static tagName = "my-card";
+export default class FiloCard extends Elena(HTMLElement) {
+  static tagName = "filo-card";
   static props = ["variant", "padding"];
 
   variant = "default";
@@ -43,4 +43,4 @@ export default class MyCard extends Elena(HTMLElement) {
   // Elena applies the attribute changes reactively so CSS can respond.
 }
 
-MyCard.define();
+FiloCard.define();

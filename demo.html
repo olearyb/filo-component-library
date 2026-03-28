@@ -11,59 +11,8 @@
     In a real project this points to dist/tokens/tokens.css
     For dev, run `npm run build:tokens` first.
   -->
-  <!-- <link rel="stylesheet" href="./dist/tokens/tokens.css" /> -->
-
-  <!--
-    DEV FALLBACK: Inline tokens so this file works without a build step.
-    Delete this block once you run `npm run build:tokens`.
-  -->
-  <style>
-    :root {
-      --mcl-color-semantic-primary:         #3b82f6;
-      --mcl-color-semantic-primary-hover:   #2563eb;
-      --mcl-color-semantic-primary-active:  #1d4ed8;
-      --mcl-color-semantic-primary-subtle:  #eff6ff;
-      --mcl-color-semantic-text-default:    #111827;
-      --mcl-color-semantic-text-muted:      #374151;
-      --mcl-color-semantic-text-on-primary: #ffffff;
-      --mcl-color-semantic-surface:         #ffffff;
-      --mcl-color-semantic-surface-subtle:  #f9fafb;
-      --mcl-color-semantic-border:          #e5e7eb;
-      --mcl-color-semantic-danger:          #ef4444;
-      --mcl-color-semantic-danger-hover:    #dc2626;
-
-      --mcl-spacing-1:  4px;
-      --mcl-spacing-2:  8px;
-      --mcl-spacing-3:  12px;
-      --mcl-spacing-4:  16px;
-      --mcl-spacing-5:  20px;
-      --mcl-spacing-6:  24px;
-      --mcl-spacing-8:  32px;
-      --mcl-spacing-10: 40px;
-      --mcl-spacing-12: 48px;
-
-      --mcl-border-radius-sm:   4px;
-      --mcl-border-radius-md:   8px;
-      --mcl-border-radius-lg:   12px;
-      --mcl-border-radius-full: 9999px;
-
-      --mcl-font-size-xs:   12px;
-      --mcl-font-size-sm:   14px;
-      --mcl-font-size-base: 16px;
-      --mcl-font-size-lg:   18px;
-
-      --mcl-font-weight-regular:  400;
-      --mcl-font-weight-medium:   500;
-      --mcl-font-weight-semibold: 600;
-
-      --mcl-line-height-tight:  1.25;
-      --mcl-line-height-normal: 1.5;
-
-      --mcl-shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
-      --mcl-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-      --mcl-shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-    }
-  </style>
+  <link rel="stylesheet" href="./dist/tokens/light.css" />
+  <link rel="stylesheet" href="./dist/tokens/desktop.css" />
 
   <!--
     Step 2: Load the component bundle.
@@ -74,16 +23,16 @@
     import { Elena, html } from "https://unpkg.com/@elenajs/core/bundle";
 
     /* ── Stack ──────────────────────────────────────────────────── */
-    class MyStack extends Elena(HTMLElement) {
-      static tagName = "my-stack";
+    class FiloStack extends Elena(HTMLElement) {
+      static tagName = "filo-stack";
       static props = ["direction", "gap", "align", "justify", "wrap"];
       direction = "column"; gap = "4"; align = "start"; justify = "start"; wrap = false;
     }
-    MyStack.define();
+    FiloStack.define();
 
     /* ── Button ─────────────────────────────────────────────────── */
-    class MyButton extends Elena(HTMLElement) {
-      static tagName = "my-button";
+    class FiloButton extends Elena(HTMLElement) {
+      static tagName = "filo-button";
       static props = ["variant", "size", "disabled", "loading"];
       variant = "primary"; size = "md"; disabled = false; loading = false;
 
@@ -105,19 +54,19 @@
           </button>`;
       }
     }
-    MyButton.define();
+    FiloButton.define();
 
     /* ── Card ───────────────────────────────────────────────────── */
-    class MyCard extends Elena(HTMLElement) {
-      static tagName = "my-card";
+    class FiloCard extends Elena(HTMLElement) {
+      static tagName = "filo-card";
       static props = ["variant", "padding"];
       variant = "default"; padding = "md";
     }
-    MyCard.define();
+    FiloCard.define();
 
     /* ── Demo interactions ──────────────────────────────────────── */
     document.querySelector("#btn-loading")?.addEventListener("click", function() {
-      const btn = this.closest("my-button");
+      const btn = this.closest("filo-button");
       btn.loading = true;
       setTimeout(() => { btn.loading = false; }, 2000);
     });
@@ -128,130 +77,130 @@
     *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: var(--mcl-spacing-8);
+      padding: var(--filo-spacing-8);
       font-family: system-ui, sans-serif;
-      background: var(--mcl-color-semantic-surface-subtle);
-      color: var(--mcl-color-semantic-text-default);
+      background: var(--filo-color-semantic-surface-subtle);
+      color: var(--filo-color-semantic-text-default);
     }
-    h1 { font-size: 1.5rem; font-weight: 700; margin: 0 0 var(--mcl-spacing-2); }
-    h2 { font-size: 1rem; font-weight: 600; margin: 0 0 var(--mcl-spacing-4); color: var(--mcl-color-semantic-text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
-    section { margin-bottom: var(--mcl-spacing-10); }
+    h1 { font-size: 1.5rem; font-weight: 700; margin: 0 0 var(--filo-spacing-2); }
+    h2 { font-size: 1rem; font-weight: 600; margin: 0 0 var(--filo-spacing-4); color: var(--filo-color-semantic-text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    section { margin-bottom: var(--filo-spacing-10); }
 
     /* ── Button component styles (inline for CDN demo) ──────────── */
-    my-button .btn {
+    filo-button .btn {
       display: inline-flex; align-items: center; justify-content: center;
-      gap: var(--mcl-spacing-2); border: 1px solid transparent;
-      border-radius: var(--mcl-border-radius-md); cursor: pointer;
-      font-family: inherit; font-weight: var(--mcl-font-weight-medium);
-      line-height: var(--mcl-line-height-tight); white-space: nowrap;
+      gap: var(--filo-spacing-2); border: 1px solid transparent;
+      border-radius: var(--filo-border-radius-md); cursor: pointer;
+      font-family: inherit; font-weight: var(--filo-font-weight-medium);
+      line-height: var(--filo-line-height-tight); white-space: nowrap;
       transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
     }
-    my-button .btn--sm  { font-size: var(--mcl-font-size-xs); padding: var(--mcl-spacing-1) var(--mcl-spacing-3); border-radius: var(--mcl-border-radius-sm); }
-    my-button .btn--md  { font-size: var(--mcl-font-size-sm); padding: var(--mcl-spacing-2) var(--mcl-spacing-4); }
-    my-button .btn--lg  { font-size: var(--mcl-font-size-base); padding: var(--mcl-spacing-3) var(--mcl-spacing-6); border-radius: var(--mcl-border-radius-lg); }
-    my-button .btn--primary   { background: var(--mcl-color-semantic-primary); color: var(--mcl-color-semantic-text-on-primary); box-shadow: var(--mcl-shadow-sm); }
-    my-button .btn--primary:hover   { background: var(--mcl-color-semantic-primary-hover); box-shadow: var(--mcl-shadow-md); }
-    my-button .btn--secondary { background: var(--mcl-color-semantic-surface); color: var(--mcl-color-semantic-text-default); border-color: var(--mcl-color-semantic-border); box-shadow: var(--mcl-shadow-sm); }
-    my-button .btn--secondary:hover { background: var(--mcl-color-semantic-surface-subtle); }
-    my-button .btn--ghost     { background: transparent; color: var(--mcl-color-semantic-primary); }
-    my-button .btn--ghost:hover     { background: var(--mcl-color-semantic-primary-subtle); }
-    my-button .btn--danger    { background: var(--mcl-color-semantic-danger); color: var(--mcl-color-semantic-text-on-primary); }
-    my-button .btn--danger:hover    { background: var(--mcl-color-semantic-danger-hover); }
-    my-button .btn--disabled, my-button button:disabled { opacity: 0.5; cursor: not-allowed; }
-    my-button .btn--loading { cursor: wait; opacity: 0.75; }
-    my-button .btn__spinner { display: inline-block; width: 1em; height: 1em; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 600ms linear infinite; }
-    my-button .btn:focus-visible { outline: 2px solid var(--mcl-color-semantic-primary); outline-offset: 2px; }
+    filo-button .btn--sm  { font-size: var(--filo-font-size-xs); padding: var(--filo-spacing-1) var(--filo-spacing-3); border-radius: var(--filo-border-radius-sm); }
+    filo-button .btn--md  { font-size: var(--filo-font-size-sm); padding: var(--filo-spacing-2) var(--filo-spacing-4); }
+    filo-button .btn--lg  { font-size: var(--filo-font-size-base); padding: var(--filo-spacing-3) var(--filo-spacing-6); border-radius: var(--filo-border-radius-lg); }
+    filo-button .btn--primary   { background: var(--filo-color-semantic-primary); color: var(--filo-color-semantic-text-on-primary); box-shadow: var(--filo-shadow-sm); }
+    filo-button .btn--primary:hover   { background: var(--filo-color-semantic-primary-hover); box-shadow: var(--filo-shadow-md); }
+    filo-button .btn--secondary { background: var(--filo-color-semantic-surface); color: var(--filo-color-semantic-text-default); border-color: var(--filo-color-semantic-border); box-shadow: var(--filo-shadow-sm); }
+    filo-button .btn--secondary:hover { background: var(--filo-color-semantic-surface-subtle); }
+    filo-button .btn--ghost     { background: transparent; color: var(--filo-color-semantic-primary); }
+    filo-button .btn--ghost:hover     { background: var(--filo-color-semantic-primary-subtle); }
+    filo-button .btn--danger    { background: var(--filo-color-semantic-danger); color: var(--filo-color-semantic-text-on-primary); }
+    filo-button .btn--danger:hover    { background: var(--filo-color-semantic-danger-hover); }
+    filo-button .btn--disabled, filo-button button:disabled { opacity: 0.5; cursor: not-allowed; }
+    filo-button .btn--loading { cursor: wait; opacity: 0.75; }
+    filo-button .btn__spinner { display: inline-block; width: 1em; height: 1em; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 600ms linear infinite; }
+    filo-button .btn:focus-visible { outline: 2px solid var(--filo-color-semantic-primary); outline-offset: 2px; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
     /* ── Stack component styles ─────────────────────────────────── */
-    my-stack { display: flex; flex-direction: column; align-items: flex-start; flex-wrap: nowrap; }
-    my-stack[direction="row"]    { flex-direction: row; }
-    my-stack[align="center"]     { align-items: center; }
-    my-stack[align="stretch"]    { align-items: stretch; }
-    my-stack[justify="between"]  { justify-content: space-between; }
-    my-stack[gap="2"]  { gap: var(--mcl-spacing-2); }
-    my-stack[gap="3"]  { gap: var(--mcl-spacing-3); }
-    my-stack[gap="4"]  { gap: var(--mcl-spacing-4); }
-    my-stack[gap="6"]  { gap: var(--mcl-spacing-6); }
-    my-stack[gap="8"]  { gap: var(--mcl-spacing-8); }
+    filo-stack { display: flex; flex-direction: column; align-items: flex-start; flex-wrap: nowrap; }
+    filo-stack[direction="row"]    { flex-direction: row; }
+    filo-stack[align="center"]     { align-items: center; }
+    filo-stack[align="stretch"]    { align-items: stretch; }
+    filo-stack[justify="between"]  { justify-content: space-between; }
+    filo-stack[gap="2"]  { gap: var(--filo-spacing-2); }
+    filo-stack[gap="3"]  { gap: var(--filo-spacing-3); }
+    filo-stack[gap="4"]  { gap: var(--filo-spacing-4); }
+    filo-stack[gap="6"]  { gap: var(--filo-spacing-6); }
+    filo-stack[gap="8"]  { gap: var(--filo-spacing-8); }
 
     /* ── Card component styles ──────────────────────────────────── */
-    my-card { display: flex; flex-direction: column; background: var(--mcl-color-semantic-surface); border-radius: var(--mcl-border-radius-lg); overflow: hidden; max-width: 320px; }
-    my-card[variant="default"]  { border: 1px solid var(--mcl-color-semantic-border); box-shadow: var(--mcl-shadow-sm); }
-    my-card[variant="elevated"] { box-shadow: var(--mcl-shadow-lg); }
-    my-card [slot="title"] { padding: var(--mcl-spacing-4) var(--mcl-spacing-4) var(--mcl-spacing-2); font-size: var(--mcl-font-size-lg); font-weight: var(--mcl-font-weight-semibold); margin: 0; }
-    my-card [slot="body"]  { padding: 0 var(--mcl-spacing-4) var(--mcl-spacing-4); font-size: var(--mcl-font-size-sm); color: var(--mcl-color-semantic-text-muted); line-height: var(--mcl-line-height-normal); margin: 0; }
-    my-card [slot="actions"] { display: flex; gap: var(--mcl-spacing-2); padding: var(--mcl-spacing-3) var(--mcl-spacing-4); border-top: 1px solid var(--mcl-color-semantic-border); }
+    filo-card { display: flex; flex-direction: column; background: var(--filo-color-semantic-surface); border-radius: var(--filo-border-radius-lg); overflow: hidden; max-width: 320px; }
+    filo-card[variant="default"]  { border: 1px solid var(--filo-color-semantic-border); box-shadow: var(--filo-shadow-sm); }
+    filo-card[variant="elevated"] { box-shadow: var(--filo-shadow-lg); }
+    filo-card [slot="title"] { padding: var(--filo-spacing-4) var(--filo-spacing-4) var(--filo-spacing-2); font-size: var(--filo-font-size-lg); font-weight: var(--filo-font-weight-semibold); margin: 0; }
+    filo-card [slot="body"]  { padding: 0 var(--filo-spacing-4) var(--filo-spacing-4); font-size: var(--filo-font-size-sm); color: var(--filo-color-semantic-text-muted); line-height: var(--filo-line-height-normal); margin: 0; }
+    filo-card [slot="actions"] { display: flex; gap: var(--filo-spacing-2); padding: var(--filo-spacing-3) var(--filo-spacing-4); border-top: 1px solid var(--filo-color-semantic-border); }
   </style>
 </head>
 <body>
 
   <h1>🧩 my-component-library</h1>
-  <p style="color: var(--mcl-color-semantic-text-muted); margin-bottom: var(--mcl-spacing-8);">Component demo — built with ElenaJS + Tokens Studio design tokens</p>
+  <p style="color: var(--filo-color-semantic-text-muted); margin-bottom: var(--filo-spacing-8);">Component demo — built with ElenaJS + Tokens Studio design tokens</p>
 
   <!-- ── Buttons ─────────────────────────────────────────────────── -->
   <section>
     <h2>Button — variants</h2>
-    <my-stack direction="row" gap="3" align="center">
-      <my-button variant="primary">Primary</my-button>
-      <my-button variant="secondary">Secondary</my-button>
-      <my-button variant="ghost">Ghost</my-button>
-      <my-button variant="danger">Danger</my-button>
-    </my-stack>
+    <filo-stack direction="row" gap="3" align="center">
+      <filo-button variant="primary">Primary</filo-button>
+      <filo-button variant="secondary">Secondary</filo-button>
+      <filo-button variant="ghost">Ghost</filo-button>
+      <filo-button variant="danger">Danger</filo-button>
+    </filo-stack>
   </section>
 
   <section>
     <h2>Button — sizes</h2>
-    <my-stack direction="row" gap="3" align="center">
-      <my-button size="sm">Small</my-button>
-      <my-button size="md">Medium</my-button>
-      <my-button size="lg">Large</my-button>
-    </my-stack>
+    <filo-stack direction="row" gap="3" align="center">
+      <filo-button size="sm">Small</filo-button>
+      <filo-button size="md">Medium</filo-button>
+      <filo-button size="lg">Large</filo-button>
+    </filo-stack>
   </section>
 
   <section>
     <h2>Button — states</h2>
-    <my-stack direction="row" gap="3" align="center">
-      <my-button disabled>Disabled</my-button>
-      <my-button id="btn-loading">Click to load</my-button>
-    </my-stack>
+    <filo-stack direction="row" gap="3" align="center">
+      <filo-button disabled>Disabled</filo-button>
+      <filo-button id="btn-loading">Click to load</filo-button>
+    </filo-stack>
   </section>
 
   <!-- ── Cards ──────────────────────────────────────────────────── -->
   <section>
     <h2>Card — variants</h2>
-    <my-stack direction="row" gap="6" align="stretch">
+    <filo-stack direction="row" gap="6" align="stretch">
 
-      <my-card variant="default">
+      <filo-card variant="default">
         <h3 slot="title">Default card</h3>
         <p slot="body">Uses a subtle border and small shadow. Good for lists and grids.</p>
-        <my-button slot="actions" variant="primary" size="sm">Action</my-button>
-        <my-button slot="actions" variant="ghost" size="sm">Cancel</my-button>
-      </my-card>
+        <filo-button slot="actions" variant="primary" size="sm">Action</filo-button>
+        <filo-button slot="actions" variant="ghost" size="sm">Cancel</filo-button>
+      </filo-card>
 
-      <my-card variant="elevated">
+      <filo-card variant="elevated">
         <h3 slot="title">Elevated card</h3>
         <p slot="body">Uses a larger shadow instead of a border. Good for featured content.</p>
-        <my-button slot="actions" variant="secondary" size="sm">Learn more</my-button>
-      </my-card>
+        <filo-button slot="actions" variant="secondary" size="sm">Learn more</filo-button>
+      </filo-card>
 
-    </my-stack>
+    </filo-stack>
   </section>
 
   <!-- ── Stack ──────────────────────────────────────────────────── -->
   <section>
     <h2>Stack — layout primitive</h2>
-    <my-stack gap="4" style="background: var(--mcl-color-semantic-surface); padding: var(--mcl-spacing-4); border-radius: var(--mcl-border-radius-lg); border: 1px solid var(--mcl-color-semantic-border);">
-      <my-stack direction="row" gap="2" justify="between" align="center" style="width: 100%;">
-        <span style="font-weight: var(--mcl-font-weight-semibold);">Header row</span>
-        <my-button variant="ghost" size="sm">Edit</my-button>
-      </my-stack>
-      <p style="margin: 0; font-size: var(--mcl-font-size-sm); color: var(--mcl-color-semantic-text-muted);">Stack composes vertically by default. Switch to row, control gap and alignment with HTML attributes.</p>
-      <my-stack direction="row" gap="2">
-        <my-button size="sm">Save</my-button>
-        <my-button variant="ghost" size="sm">Discard</my-button>
-      </my-stack>
-    </my-stack>
+    <filo-stack gap="4" style="background: var(--filo-color-semantic-surface); padding: var(--filo-spacing-4); border-radius: var(--filo-border-radius-lg); border: 1px solid var(--filo-color-semantic-border);">
+      <filo-stack direction="row" gap="2" justify="between" align="center" style="width: 100%;">
+        <span style="font-weight: var(--filo-font-weight-semibold);">Header row</span>
+        <filo-button variant="ghost" size="sm">Edit</filo-button>
+      </filo-stack>
+      <p style="margin: 0; font-size: var(--filo-font-size-sm); color: var(--filo-color-semantic-text-muted);">Stack composes vertically by default. Switch to row, control gap and alignment with HTML attributes.</p>
+      <filo-stack direction="row" gap="2">
+        <filo-button size="sm">Save</filo-button>
+        <filo-button variant="ghost" size="sm">Discard</filo-button>
+      </filo-stack>
+    </filo-stack>
   </section>
 
 </body>

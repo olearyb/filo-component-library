@@ -24,7 +24,7 @@
     "@elenajs/bundler": "latest",
     "@elenajs/core": "latest",
     "@tokens-studio/sd-transforms": "latest",
-    "style-dictionary": "^4.0.0"
+    "style-dictionary": "^5.0.0"
   },
   "peerDependencies": {
     "@elenajs/core": "latest"

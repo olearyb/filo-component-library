@@ -9,33 +9,33 @@
  * For Light DOM slot styling, target the actual slot attributes directly.
  */
 
-@scope (my-card) {
+@scope (filo-card) {
   /* ── Base card ──────────────────────────────────────────────────── */
   :scope {
     display: flex;
     flex-direction: column;
-    background-color: var(--mcl-color-semantic-surface);
-    border-radius: var(--mcl-border-radius-lg);
+    background-color: var(--filo-color-semantic-surface);
+    border-radius: var(--filo-border-radius-lg);
     overflow: hidden;
     transition: box-shadow 200ms ease;
   }
 
   /* ── Variants ───────────────────────────────────────────────────── */
   :scope[variant="default"] {
-    border: 1px solid var(--mcl-color-semantic-border);
-    box-shadow: var(--mcl-shadow-sm);
+    border: 1px solid var(--filo-color-semantic-border);
+    box-shadow: var(--filo-shadow-sm);
   }
 
   :scope[variant="elevated"] {
     border: none;
-    box-shadow: var(--mcl-shadow-lg);
+    box-shadow: var(--filo-shadow-lg);
   }
   :scope[variant="elevated"]:hover {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   }
 
   :scope[variant="outlined"] {
-    border: 2px solid var(--mcl-color-semantic-border);
+    border: 2px solid var(--filo-color-semantic-border);
     box-shadow: none;
   }
 
@@ -43,22 +43,22 @@
   :scope [slot="title"],
   :scope [slot="body"],
   :scope [slot="actions"] {
-    padding-left: var(--mcl-spacing-4);
-    padding-right: var(--mcl-spacing-4);
+    padding-left: var(--filo-spacing-4);
+    padding-right: var(--filo-spacing-4);
   }
 
   :scope[padding="sm"] [slot="title"],
   :scope[padding="sm"] [slot="body"],
   :scope[padding="sm"] [slot="actions"] {
-    padding-left: var(--mcl-spacing-3);
-    padding-right: var(--mcl-spacing-3);
+    padding-left: var(--filo-spacing-3);
+    padding-right: var(--filo-spacing-3);
   }
 
   :scope[padding="lg"] [slot="title"],
   :scope[padding="lg"] [slot="body"],
   :scope[padding="lg"] [slot="actions"] {
-    padding-left: var(--mcl-spacing-6);
-    padding-right: var(--mcl-spacing-6);
+    padding-left: var(--filo-spacing-6);
+    padding-right: var(--filo-spacing-6);
   }
 
   /* ── Media region ───────────────────────────────────────────────── */
@@ -71,33 +71,33 @@
 
   /* ── Title ──────────────────────────────────────────────────────── */
   :scope [slot="title"] {
-    padding-top: var(--mcl-spacing-4);
-    padding-bottom: var(--mcl-spacing-2);
-    font-size: var(--mcl-font-size-lg);
-    font-weight: var(--mcl-font-weight-semibold);
-    color: var(--mcl-color-semantic-text-default);
+    padding-top: var(--filo-spacing-4);
+    padding-bottom: var(--filo-spacing-2);
+    font-size: var(--filo-font-size-lg);
+    font-weight: var(--filo-font-weight-semibold);
+    color: var(--filo-color-semantic-text-default);
     margin: 0;
-    line-height: var(--mcl-line-height-tight);
+    line-height: var(--filo-line-height-tight);
   }
 
   /* ── Body ───────────────────────────────────────────────────────── */
   :scope [slot="body"] {
     flex: 1;
-    padding-bottom: var(--mcl-spacing-4);
-    font-size: var(--mcl-font-size-sm);
-    color: var(--mcl-color-semantic-text-muted);
-    line-height: var(--mcl-line-height-normal);
+    padding-bottom: var(--filo-spacing-4);
+    font-size: var(--filo-font-size-sm);
+    color: var(--filo-color-semantic-text-muted);
+    line-height: var(--filo-line-height-normal);
     margin: 0;
   }
 
   /* ── Actions ────────────────────────────────────────────────────── */
   :scope [slot="actions"] {
     display: flex;
-    gap: var(--mcl-spacing-2);
+    gap: var(--filo-spacing-2);
     align-items: center;
-    padding-top: var(--mcl-spacing-3);
-    padding-bottom: var(--mcl-spacing-4);
-    border-top: 1px solid var(--mcl-color-semantic-border);
+    padding-top: var(--filo-spacing-3);
+    padding-bottom: var(--filo-spacing-4);
+    border-top: 1px solid var(--filo-color-semantic-border);
     margin-top: auto;
   }
 }

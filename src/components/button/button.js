@@ -1,15 +1,15 @@
 /**
- * <my-button> — Primitive Component
+ * <filo-button> — Primitive Component
  *
  * A self-contained button that renders its own HTML.
  * Equivalent to a leaf/atom in React terms.
  *
  * Usage:
- *   <my-button>Click me</my-button>
- *   <my-button variant="danger" size="sm">Delete</my-button>
- *   <my-button variant="ghost">Cancel</my-button>
- *   <my-button loading>Saving...</my-button>
- *   <my-button disabled>Unavailable</my-button>
+ *   <filo-button>Click me</filo-button>
+ *   <filo-button variant="danger" size="sm">Delete</filo-button>
+ *   <filo-button variant="ghost">Cancel</filo-button>
+ *   <filo-button loading>Saving...</filo-button>
+ *   <filo-button disabled>Unavailable</filo-button>
  *
  * Props (also settable as HTML attributes):
  *   variant  — "primary" | "secondary" | "ghost" | "danger"  (default: "primary")
@@ -24,8 +24,8 @@
 
 import { Elena, html } from "@elenajs/core";
 
-export default class MyButton extends Elena(HTMLElement) {
-  static tagName = "my-button";
+export default class FiloButton extends Elena(HTMLElement) {
+  static tagName = "filo-button";
 
   // Declare all reactive props — Elena will sync these with HTML attributes
   static props = ["variant", "size", "disabled", "loading"];
@@ -81,4 +81,4 @@ export default class MyButton extends Elena(HTMLElement) {
   }
 }
 
-MyButton.define();
+FiloButton.define();

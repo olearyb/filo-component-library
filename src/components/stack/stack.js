@@ -1,28 +1,28 @@
 /**
- * <my-stack> — Composite Component
+ * <filo-stack> — Composite Component
  *
  * A flexible layout primitive for arranging children in a row or column
  * with consistent spacing from your design tokens.
  *
  * Usage:
  *   <!-- Vertical stack (default) -->
- *   <my-stack>
- *     <my-card>...</my-card>
- *     <my-card>...</my-card>
- *   </my-stack>
+ *   <filo-stack>
+ *     <filo-card>...</filo-card>
+ *     <filo-card>...</filo-card>
+ *   </filo-stack>
  *
  *   <!-- Horizontal row with large gap, centred -->
- *   <my-stack direction="row" gap="6" align="center">
- *     <my-button>Save</my-button>
- *     <my-button variant="ghost">Cancel</my-button>
- *   </my-stack>
+ *   <filo-stack direction="row" gap="6" align="center">
+ *     <filo-button>Save</filo-button>
+ *     <filo-button variant="ghost">Cancel</filo-button>
+ *   </filo-stack>
  *
  *   <!-- Wrap row -->
- *   <my-stack direction="row" wrap gap="4">
+ *   <filo-stack direction="row" wrap gap="4">
  *     <div>Item 1</div>
  *     <div>Item 2</div>
  *     <div>Item 3</div>
- *   </my-stack>
+ *   </filo-stack>
  *
  * Props:
  *   direction — "row" | "column"                          (default: "column")
@@ -34,8 +34,8 @@
 
 import { Elena } from "@elenajs/core";
 
-export default class MyStack extends Elena(HTMLElement) {
-  static tagName = "my-stack";
+export default class FiloStack extends Elena(HTMLElement) {
+  static tagName = "filo-stack";
   static props = ["direction", "gap", "align", "justify", "wrap"];
 
   direction = "column";
@@ -45,4 +45,4 @@ export default class MyStack extends Elena(HTMLElement) {
   wrap      = false;
 }
 
-MyStack.define();
+FiloStack.define();
